@@ -1,0 +1,19 @@
+{
+  "name": "gotbot",
+  "version": "0.0.1",
+  "description": "Bot pour le serveur discord 'GameOfThronesRP' made by (discord) neonedishere / neoned2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NeonedIsHere/GOTBot.git"
+  },
+  "author": "neonedishere / neoned2017",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeonedIsHere/GOTBot/issues"
+  },
+  "homepage": "https://github.com/NeonedIsHere/GOTBot#readme"
+}
