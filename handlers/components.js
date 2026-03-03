@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const logTitle = require('../function/logTitle');
 
 module.exports = (client) => {
-
+    logTitle("Chargement des intéraction", false)
     const inter = [
         { name: 'buttons', collection: client.buttons },
         { name: 'selects', collection: client.selects },
@@ -26,12 +27,12 @@ module.exports = (client) => {
             const interactionModule = require(filepath);
 
             if (!interactionModule || !interactionModule.customId || !interactionModule.execute) {
-                console.error(`(WK-${process.pid}) [❌] » [Interaction] ${file} est invalide (customId ou execute manquant).`);
+                console.error(`├── (WK-${process.pid}) [❌] » [Interaction] ${file} est invalide (customId ou execute manquant).`);
                 continue;
             }
 
             type.collection.set(interactionModule.customId, interactionModule);
-            console.log(`(WK-${process.pid}) [✅] » [Interaction] Interaction chargé avec succès: ${interactionModule} depuis ${path.relative(process.cwd(), filepath)}`);
+            console.log(`├── (WK-${process.pid}) [🧩] » [Interaction] chargé avec succès: ${interactionModule.customId} depuis ${path.relative(process.cwd(), filepath)}`);
         }
     }
 };

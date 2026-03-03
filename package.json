@@ -1,6 +1,6 @@
 {
   "name": "gotbot",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bot pour le serveur discord 'GameOfThronesRP' made by (discord) neonedishere / neoned2017",
   "main": "index.js",
   "scripts": {

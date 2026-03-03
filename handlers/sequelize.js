@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize')
 
 const sequelize = new Sequelize({
-    database: "Exia_Gestion",
+    database: "gotbot",
     username: "root",
     host: "localhost",
     dialect: "mysql",
