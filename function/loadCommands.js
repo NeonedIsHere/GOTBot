@@ -1,7 +1,9 @@
 const fs = require('fs')
 const path = require('path')
+const logTitle = require('./logTitle')
 
 async function loadCommand (dir, client) {
+    logTitle("Chargement des commandes", false)
     const files = fs.readdirSync(dir)
 
     for (const file of files) {
@@ -19,7 +21,7 @@ async function loadCommand (dir, client) {
             }
 
             client.commands.set(command.name, command)
-            console.log(`(WK-${process.pid}) [📌] » [Commands] Commande chargé avec succès: ${command.name} depuis ${file}`)
+            console.log(`├── (WK-${process.pid}) [📌] » [Commands] chargé avec succès: ${command.name} depuis ${file}`)
         }
     }
 }

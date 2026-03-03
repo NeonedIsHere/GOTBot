@@ -1,7 +1,9 @@
 const fs = require('fs')
 const path = require('path')
+const logTitle = require('./logTitle')
 
 function loadTables(sequelize, dir) {
+    logTitle('Chargement des tables')
     const tables = {}
 
     fs.readdirSync(dir)
@@ -13,7 +15,7 @@ function loadTables(sequelize, dir) {
                 Object.assign(tables, loadTables(sequelize, fullPath))
             } else if (f.endsWith('.js')) {
                 const table = require(fullPath)
-                console.log(`(WK-${process.pid}) [🛢️] » [SQL] Table ${table.name} chargé avec succès`)
+                console.log(`├── (WK-${process.pid}) [🛢️] » [SQL] Table ${table.name} chargé avec succès`)
                 tables[table.name] = table
             }
         }

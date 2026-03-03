@@ -1,7 +1,9 @@
 const fs = require('fs')
 const path = require('path')
+const logTitle = require('./logTitle')
 
 function loadEvent(dir, client) {
+    logTitle("Chargement des events", false)
     const files = fs.readdirSync(dir)
 
     for (const file of files) {
@@ -25,7 +27,7 @@ function loadEvent(dir, client) {
             }
 
             client.events.set(event.name, event)
-            console.log(`(WK-${process.pid}) [✅] » [Events] Loaded event ${event.name} from ${file}`)
+            console.log(`├── (WK-${process.pid}) [📡] » [Events] chargée avec succès: ${event.name} depuis ${file}`)
         }
     }
 }
